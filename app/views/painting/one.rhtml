@@ -1,0 +1,20 @@
+<div class="painting">
+	<img src="<%=url_for(:action => 'painting', :id => @painting.id)%>" />	
+</div>
+<div>
+	<div class="oneText">
+		If you are interested in this painting then send me an email that includes the painting name and your contact details.
+	</div>	
+	<div class="oneContact">
+		<ul class="oneTxt">
+			<li>Name: <%=@painting.painting_name%></li>
+			<li>Size: <%=@painting.width%>&quot;  x <%=@painting.height%>&quot;</li>
+			<li>Material: <%=@painting.material%></li>
+			<li>Price: £<%=@painting.price%></li>
+		</ul>
+	</div>	
+</div>
+<div class="link">
+	<%= link_to 'Back to All Paintings <<<', :action => 'all'%>
+</div>
+

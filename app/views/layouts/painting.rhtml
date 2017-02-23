@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Paintings by Noel Bobbin: <%= controller.action_name %></title>
+  <%= stylesheet_link_tag 'painting' %>
+</head>
+<body>
+<h1 style="color:red;">Oil and Acrylic Paintings by Noel Bobbin</h1>
+<div style="margin: 0px 0px 10px 50px;">
+<span class="menu_ext">
+		<%= link_to 'Home', :action => 'home' %>
+	</span>
+	<span class="menu_ext">
+		<%= link_to 'Paintings', :action => 'all' %>
+	</span>
+	<span class="menu_ext">
+		<a href="mailto:noelbobbinpaintings@hotmail.co.uk">Email Me</a>
+	</span>
+</div>
+<hr style=" margin: 0px 0px 0px 20px">
+<div style="margin: 20px 0px 0px 30px;">
+	<p style="color: green"><%= flash[:notice] %></p>	
+	<%= yield  %>
+</div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-4138660-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+</body>
+</html>

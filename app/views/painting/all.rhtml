@@ -1,0 +1,13 @@
+<div class="explanation">
+	Click on the thumbnail of a painting to see a larger version and more details.
+</div>
+<% for painting in @paintings %>
+		<div class="painting">
+			<a href="one/<%=painting.id%>">
+				<img src="<%=url_for(:action => 'painting', :id => painting.id)%>" width="<%=painting.get_thumbnail_width%>" height="<%=painting.get_thumbnail_height%>" />		
+			</a>
+			<div class="paintingTxt">
+				<%=painting.painting_name%>
+			</div>
+		</div>
+<% end %>

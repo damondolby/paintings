@@ -1,0 +1,14 @@
+<h1>New painting</h1>
+
+<%= error_messages_for 'painting' %>
+
+<% form_for(:painting, :url => {:action => 'create'}, 
+						:html => { :multipart => true}) do |form| %>
+  Painting Name: <%=form.text_field("painting_name")%><br/>
+  Painting Width (&quot;): <%=form.text_field("width")%><br/>
+  Painting Height (&quot;): <%=form.text_field("height")%><br/>
+  Painting Material: <%=form.text_field("material")%><br/>
+  Upload Painting: <%=form.file_field("uploaded_picture")%><br/>
+  Painting Price (£): <%=form.text_field("price")%><br/>
+  <%= submit_tag "Create" %>
+<% end %>

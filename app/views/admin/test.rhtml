@@ -1,0 +1,6 @@
+<h1>Listing paintings</h1>
+
+<%= form_tag({:action=>'save_picture'}, :multipart => true)%>
+ <input type="file" name="picture_file" />
+ <input type="submit" name="Upload" />
+</form>

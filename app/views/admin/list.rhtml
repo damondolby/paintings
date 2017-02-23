@@ -1,0 +1,29 @@
+<h1>Listing paintings</h1>
+
+<table>
+  <tr>
+    <th>Painting Name</th>
+	<th>Material</th>
+	<th>Width</th>
+	<th>Height</th>
+	<th>Price</th>
+	<th>&nbsp;</th>
+	<th>&nbsp;</th>
+  </tr>
+  
+<% for painting in @paintings %>
+  <tr>
+    <td><%=painting.painting_name %></td>
+	<td><%=painting.material %></td>
+	<td><%=painting.width %>&quot;</td>
+	<td><%=painting.height %>&quot;</td>
+	<td>£<%=painting.price %></td>
+    <td><%= link_to 'Show', :action => 'show', :id => painting %></td>
+    <td><%= link_to 'Delete', { :action => 'destroy', :id => painting }, :confirm => 'Are you sure?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Previous page', { :page => @painting_pages.current.previous } if @painting_pages.current.previous %>
+<%= link_to 'Next page', { :page => @painting_pages.current.next } if @painting_pages.current.next %> 
+

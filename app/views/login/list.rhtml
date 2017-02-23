@@ -1,0 +1,25 @@
+<h1>Users who can access the admin site</h1>
+
+<table>
+  <tr>
+  <% for column in User.content_columns %>
+    <th><%= column.human_name %></th>
+  <% end %>
+  </tr>
+  
+<% for user in @users %>
+  <tr>
+  <% for column in User.content_columns %>
+    <td><%=h user.send(column.name) %></td>
+  <% end %>
+    <td><%= link_to 'Delete User', { :action => 'destroy', :id => user }, :confirm => 'Are you sure?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Previous page', { :page => @user_pages.current.previous } if @user_pages.current.previous %>
+<%= link_to 'Next page', { :page => @user_pages.current.next } if @user_pages.current.next %> 
+
+<br />
+
+<%= link_to 'Add New user', :action => 'new' %>
